@@ -1,1 +1,1 @@
-# pokedex_with_react-router
+# pokedex
