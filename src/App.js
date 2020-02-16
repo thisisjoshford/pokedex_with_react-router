@@ -11,6 +11,7 @@ import List from './List.js';
 import Details from './Details.js';
 import Header from './Header.js';
 import About from './About.js';
+import Error from './Error.js';
 
 export default class App extends Component {
   render() {
@@ -26,10 +27,14 @@ export default class App extends Component {
             <Link to ="/about">About</Link>
           </header>
           {/* These define the routing paths to our imported components */}
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/pokemon_list" component={List}></Route>
-            <Route path="/pokemon_details" component={Details}></Route>
-            <Route path="/about" component={About}></Route>
+          {/* Switch function works like a javascript switch statement */}
+          <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/pokemon_list" component={List}/>
+            <Route path="/pokemon_details" component={Details}/>
+            <Route path="/about" component={About}/>
+            <Route component={Error}/>
+          </Switch>
         </div>
       </Router>
     )
