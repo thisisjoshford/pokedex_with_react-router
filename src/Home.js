@@ -24,16 +24,17 @@ export default class Home extends Component {
             const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.match.params.pokemon}`)
 
             this.setState({ pokemon: data.body.results })
+            console.log(this.state.pokemon)
         }
     }
-    
+   
     handleSearch = async (e) => {
         e.preventDefault();
         const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchQuery}`)
 
         this.setState({ 
             pokemon: data.body.results, })
-            console.log('data', data)
+           console.log(this.state.pokemon)
 
      //takes the search query and puts it in the url
      this.props.history.push(`/pokemon_list/${this.state.searchQuery}`)
@@ -45,7 +46,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <Router>
+            
             <div>
                 <header className="App-header">
                     <SearchBar 
@@ -55,10 +56,8 @@ export default class Home extends Component {
                     />
                 </header>
                     <List pokemon={this.state.pokemon}/>
-                    <Route exact path="/pokemon_list/:pokemon" component={List}/>
-                    <Route exact path="/pokemon_details" component={Details}/>
             </div>
-            </Router>
+           
         )
     }
 }
