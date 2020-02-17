@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 export default class List extends Component {
-    render() {
 
+    
+    render() {
+       
         return (
             <div>
-                <p>this is a LIST of all the pokemonz!!!</p>
-                
+                {console.log(this.props.pokemon.results)}
+                <p>this is a LIST of all the pokemonz!!!</p> 
             </div>
         )
     }
