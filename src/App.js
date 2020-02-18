@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 //importing our components
 import Home from './Home.js';
-import List from './List.js';
 import Details from './Details.js';
 import Header from './Header.js';
 import About from './About.js';
@@ -29,10 +28,9 @@ export default class App extends Component {
           {/* These define the routing paths to our imported components */}
           {/* Switch function works like a javascript switch statement */}
           <Switch>
-            <Route exact path="/" exact component={Home}/>
-            <Route exact path="/pokemon_list/:pokemon" component={List}/>
-            <Route exact path="/pokemon_details" component={Details}/>
             <Route exact path="/about" component={About}/>
+            <Route exact path="/:pokemon?" component={Home}/>
+            <Route exact path="/pokemon_details/:pokeid?" component={Details}/>
             <Route component={Error}/>
           </Switch>
         </div>

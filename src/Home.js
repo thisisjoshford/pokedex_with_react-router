@@ -19,13 +19,18 @@ export default class Home extends Component {
     
     //this portion is for your grandma
     async componentDidMount() {
+        console.log('>>>>> ATTEMPTED MOUNTING <<<<<<<')
         if (this.props.match.params.pokemon) {
-            console.log('>>>>> MOUNTING <<<<<<<')
+            console.log('>>>>> WE\'RE MOUNTING <<<<<<<')
             const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.match.params.pokemon}`)
 
             this.setState({ pokemon: data.body.results })
             console.log(this.state.pokemon)
         }
+    }
+
+    componentWillMount(){
+        console.log('>>>>>>unmounting<<<<<<')
     }
    
     handleSearch = async (e) => {
@@ -34,10 +39,10 @@ export default class Home extends Component {
 
         this.setState({ 
             pokemon: data.body.results, })
-           console.log(this.state.pokemon)
+        //    console.log(this.state.pokemon)
 
      //takes the search query and puts it in the url
-     this.props.history.push(`/pokemon_list/${this.state.searchQuery}`)
+     this.props.history.push(`${this.state.searchQuery}`)
      console.log(this.props.history)
      return data
     }
@@ -45,8 +50,7 @@ export default class Home extends Component {
     handleChange = (e) => this.setState({ searchQuery: e.target.value })
 
     render() {
-        return (
-            
+        return(
             <div>
                 <header className="App-header">
                     <SearchBar 
@@ -57,7 +61,6 @@ export default class Home extends Component {
                 </header>
                     <List pokemon={this.state.pokemon}/>
             </div>
-           
         )
     }
 }

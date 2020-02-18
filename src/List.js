@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import Details from './Details.js';
+import { 
+    Route, 
+    Switch,
+    Link,
+    BrowserRouter as Router, 
+  } from 'react-router-dom';
+import './List.css'
 
 export default class List extends Component {
 
     render() {
-        const pokemonArray = this.props.pokemon
+        console.log(this.props.pokemon)
+        const pokemonArray = this.props.pokemon    
         const pokemonElements = pokemonArray.map((obj) => {
-        return <li className="pokemonContainer" key={obj.id}>
+          
+        return <Link to ="/pokemon_details/:pokemonId?">
+            <li className="pokemonContainer" key={obj.id}>
+            {console.log(obj.url_image)}
             <div id="pokeImage">
                 <img className="pokeImages" src={obj.url_image} alt={obj.pokemon}/>
             </div>
@@ -17,9 +28,11 @@ export default class List extends Component {
                 <a href={obj.pokedex}>Info</a>
             </div>
         </li>
+        </Link> 
+        
         });
         return(
             pokemonElements
         );
-    }
+    } 
 }
