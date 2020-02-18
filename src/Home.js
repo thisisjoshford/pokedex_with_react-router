@@ -25,7 +25,7 @@ export default class Home extends Component {
             const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.match.params.pokemon}`)
 
             this.setState({ pokemon: data.body.results })
-            console.log(this.state.pokemon)
+            // console.log(this.state.pokemon)
         }
     }
 

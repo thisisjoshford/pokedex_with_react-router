@@ -15,7 +15,7 @@ export default class List extends Component {
         const pokemonArray = this.props.pokemon    
         const pokemonElements = pokemonArray.map((obj) => {
           
-        return <Link to ="/pokemon_details/:pokemonId?">
+        return <Link to ={`pokemon_details/${obj._id}`}>
             <li className="pokemonContainer" key={obj.id}>
             {console.log(obj.url_image)}
             <div id="pokeImage">

@@ -30,7 +30,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/about" component={About}/>
             <Route exact path="/:pokemon?" component={Home}/>
-            <Route exact path="/pokemon_details/:pokeid?" component={Details}/>
+            <Route exact path="/pokemon_details/:pokeId?" component={Details}/>
             <Route component={Error}/>
           </Switch>
         </div>
