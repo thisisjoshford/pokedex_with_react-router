@@ -15,10 +15,9 @@ export default class Home extends Component {
     state = {
         searchQuery: this.props.match.params.pokemon,
         pokemon:[],
+        searchOption: ''
     }
 
-    
-    
     //this portion is for your grandma
     async componentDidMount() {
         console.log('>>>>> ATTEMPTED MOUNTING <<<<<<<')
@@ -35,25 +34,29 @@ export default class Home extends Component {
         console.log('>>>>>>unmounting<<<<<<')
     }
    
+    //takes in search option and the user input 
     handleSearch = async (e) => {
         e.preventDefault();
-        const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchQuery}`)
-
+        const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.state.searchOption}=${this.state.searchQuery}`)
+        //update state as the results of this api query
         this.setState({ 
             pokemon: data.body.results, })
-        //    console.log(this.state.pokemon)
 
      //takes the search query and puts it in the url
      this.props.history.push(`${this.state.searchQuery}`)
      console.log(this.props.history)
      return data
     }
+    //grabbing the search option from user and setting it as state
+    handleOption = e => {
+        this.setState({ searchOption: e.target.value })
+    }
     //setting the state of handleChange 
     handleChange = (e) => this.setState({ searchQuery: e.target.value })
 
     render() {
 
-        
+        console.log(this.state.searchOption)
         return(
             <div>
                 <header className="App-header">
@@ -61,6 +64,8 @@ export default class Home extends Component {
                         searchQuery={this.state.searchQuery}
                         handleSearch={this.handleSearch} 
                         handleChange={this.handleChange}
+                        handleOption={this.handleOption}
+                       
                     />
                 </header>
                     <List pokemon={this.state.pokemon}/>
