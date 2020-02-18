@@ -20,7 +20,7 @@ export default class App extends Component {
         <div>
            {/* this creates a static header w/ navigation links */}
           <header>
-            <Header></Header>
+            <Header/>
             <Link to ="/">Home</Link>&nbsp;
             <Link to ="/about">About</Link>
             <hr/>

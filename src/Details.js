@@ -21,7 +21,6 @@ export default class Details extends Component {
                     <img className="pokeImageDetail" src={pokeObj.url_image} alt={pokeObj.pokemon}/>
                 </div>
                 <div className="labelBox">
-                    <br></br> <br></br>
                    <ul id="pokeDetails">
                         <li>Ability: {pokeObj.ability_1}</li>
                         <li>Type: {pokeObj.type_1}</li>
@@ -30,7 +29,7 @@ export default class Details extends Component {
                         <li>HP: {pokeObj.hp}</li>
                         <li>Speed: {pokeObj.speed}</li>
                         <li>Ability: {pokeObj.ability_1}</li>
-                        <li>Hidden Ability: {pokeObj.ability_hidden}</li>/
+                        <li>Hidden Ability: {pokeObj.ability_hidden}</li>
                         <a href={pokeObj.pokedex}>More info on the official Site!</a>
                    </ul>
                     

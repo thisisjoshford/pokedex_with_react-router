@@ -16,6 +16,8 @@ export default class Home extends Component {
         searchQuery: this.props.match.params.pokemon,
         pokemon:[],
     }
+
+    
     
     //this portion is for your grandma
     async componentDidMount() {
@@ -50,6 +52,8 @@ export default class Home extends Component {
     handleChange = (e) => this.setState({ searchQuery: e.target.value })
 
     render() {
+
+        
         return(
             <div>
                 <header className="App-header">

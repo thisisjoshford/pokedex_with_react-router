@@ -9,8 +9,7 @@ h3 {
 }
 
 #pokemonContainer {
-    display: flex;
-    justify-content:center;
+    
 }
 
 #pokeListImage {
@@ -27,5 +26,5 @@ h3 {
 }
 
 #pokeImages {
-    width: 400px;
+    width: 333px;
 }

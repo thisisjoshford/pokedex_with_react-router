@@ -5,7 +5,7 @@ export default class Error extends Component {
         return (
             <div>
                 <h2>Uh oh....  Webpage not found!</h2>
-                <img src="error.jpg" alt="broken pikachu"/>
+                <img src="https://media1.giphy.com/media/12BQY6Nj4ZDAFG/giphy.gif" alt="broken pikachu"/>
             </div>
         )
     }
