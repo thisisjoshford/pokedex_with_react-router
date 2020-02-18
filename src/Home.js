@@ -65,7 +65,6 @@ export default class Home extends Component {
                         handleSearch={this.handleSearch} 
                         handleChange={this.handleChange}
                         handleOption={this.handleOption}
-                       
                     />
                 </header>
                     <List pokemon={this.state.pokemon}/>
