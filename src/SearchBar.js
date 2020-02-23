@@ -6,15 +6,67 @@ export default class SearchBar extends Component {
         return (
             <form onSubmit={this.props.handleSearch}>
                 <input 
-                value={this.props.searchQuery}
-                onChange={this.props.handleChange}/>
-                <div id="searchOption">
-                    <label>Name: <input id="name-check" type="radio" name="searchOption "value="pokemon" onClick={this.props.handleOption} defaultChecked></input></label>
-                    <label>Type: <input id="name-check" type="radio" name="searchOption "value="type_1" onClick={this.props.handleOption}></input></label>
-                    <label>Ability: <input id="name-check" type="radio" name="searchOption "value="ability_1" onClick={this.props.handleOption}></input></label>
-                    <label>Hidden Ability: <input id="name-check" type="radio" name="searchOption "value="ability_hidden" onClick={this.props.handleOption}></input></label>
+                id="searchBox"
+                value={this.props.searchQuery} 
+                onChange={this.props.handleChange}
+                placeholder="          search here..."
+                />
+                    <div class="searchOption">
+                        <label>
+                            <input 
+                                id="name-check" 
+                                classType="inputSelection"
+                                type="radio" 
+                                name="searchOption" 
+                                value="pokemon"
+                                onClick={this.props.handleOption} 
+                                defaultChecked
+                            />
+                            <img src="poke_name.png"/>
+                        </label>
+
+                        <label>
+                            <input 
+                                id="type-check" 
+                                classType="inputSelection"
+                                type="radio" 
+                                name="searchOption"
+                                value="type_1" 
+                                onClick={this.props.handleOption}>
+                            </input>
+                            <img src="poke_type.png"/>
+
+                        </label>
+
+                        <label>
+                            <input 
+                                id="ability-check" 
+                                classType="inputSelection"
+                                type="radio" 
+                                name="searchOption"
+                                value="ability_1" 
+                                onClick={this.props.handleOption}>
+                            </input>
+                            <img src="poke_ability.png"/>
+                        </label>
+
+                        <label>
+                            
+                            <input 
+                                id="hidden-check" 
+                                classType="inputSelection"
+                                type="radio" 
+                                name="searchOption"
+                                value="ability_hidden" 
+                                onClick={this.props.handleOption}>
+                            </input>
+                            <img src="hidden_ability.png"/>
+                        </label>
+    
                 </div>
+                <img id="pokeBall" src="pokeBall.jpg"/>
                 <button>Search!</button>
+                <img id="pokeBall" src="pokeBall.jpg"/>
             </form>
         )
     }

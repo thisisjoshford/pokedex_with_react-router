@@ -1,0 +1,59 @@
+
+form{
+    text-align: center;
+}
+
+.searchOption label{
+    margin-left: 22px;
+    text-align: center;
+    vertical-align: auto;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.searchOption input[type="radio"] {
+    display: none;
+    margin-left: 3px;
+}
+
+.searchOption input[type="radio"]:checked+img{
+    width: 105%;
+    height: 120%;
+}
+
+#searchBox{
+    width: 200px;
+    height: 23px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: solid 2px black;
+    box-shadow: 2px 2px 2px grey;
+    font-size: large;
+}
+
+button{
+    margin-top: 22px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    width:60px;
+    height: 33px;
+    border-radius: 20%;
+    border: solid 2px black;
+    background-image: linear-gradient(white, rgb(184, 184, 184));
+    font-size: large;
+    font-family: 'Odibee Sans';
+}
+
+button:hover{
+    color: white;
+    background-image: linear-gradient( yellow, blue  );
+    cursor: pointer;
+}
+
+#pokeBall{
+    vertical-align: middle;
+    width: 30px;
+}
+
