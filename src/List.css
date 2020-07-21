@@ -1,0 +1,30 @@
+a {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    
+}
+
+h3 {
+    height: 10px
+}
+
+.pokeImages {
+    width: 150px;
+}
+
+.pokemonContainer {
+    display: inline-grid;
+    text-align: center;
+    width: 250px;
+}
+
+#pokeImage {
+    border: solid 2px black;
+    width: 200px;
+    border-radius: 30%;
+    padding: .5em;
+    margin-top: 10px;
+    margin-left: 10px;
+    box-shadow: 5px 7px 2px #9794b4;
+}
